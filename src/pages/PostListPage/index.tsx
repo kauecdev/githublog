@@ -1,23 +1,22 @@
-import { PostListPageContainer, PostsContainer } from './styles'
-import cover from '../../assets/cover.svg'
+import { PostsContainer } from './styles'
 import { AuthorDetails } from './components/AuthorDetails'
 import { SearchForm } from './components/SearchForm'
 import { PostCard } from './components/PostCard'
+import { LayoutHeaderContainer } from '../../layouts/DefaultLayout/styles'
 
 export function PostListPage() {
   return (
-    <PostListPageContainer>
-      <img src={cover} alt="" />
-      <div>
+    <main>
+      <LayoutHeaderContainer>
         <AuthorDetails />
-        <SearchForm />
-        <PostsContainer>
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-        </PostsContainer>
-      </div>
-    </PostListPageContainer>
+      </LayoutHeaderContainer>
+      <SearchForm />
+      <PostsContainer>
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+      </PostsContainer>
+    </main>
   )
 }

@@ -2,13 +2,6 @@ import styled from 'styled-components'
 import { mixins } from '../../../../styles/mixins'
 
 export const AuthorDetailsContainer = styled.section`
-  margin-top: -106px;
-  padding: 2rem;
-  position: relative;
-  border-radius: 10px;
-
-  background-color: ${(props) => props.theme['base-profile']};
-
   display: flex;
   gap: 2rem;
 

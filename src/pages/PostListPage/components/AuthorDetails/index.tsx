@@ -1,4 +1,9 @@
-import { BuildingOffice, GithubLogo, Users } from '@phosphor-icons/react'
+import {
+  ArrowSquareOut,
+  BuildingOffice,
+  GithubLogo,
+  Users,
+} from '@phosphor-icons/react'
 import { Link } from '../../../../components/Link'
 import { AuthorDetailsContainer, AuthorDetailsSection } from './styles'
 
@@ -9,7 +14,9 @@ export function AuthorDetails() {
       <AuthorDetailsSection>
         <header>
           <span>Kauê Cavalcante</span>
-          <Link>Github</Link>
+          <Link>
+            Github <ArrowSquareOut size={12} />
+          </Link>
         </header>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
