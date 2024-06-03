@@ -18,14 +18,11 @@ export function AuthorDetails() {
       <AuthorDetailsSection>
         <header>
           <span>{userDetails.name}</span>
-          <Link>
+          <Link to={userDetails.html_url} target="_blank">
             Github <ArrowSquareOut size={12} />
           </Link>
         </header>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          earum explicabo, animi sint possimus dignissimos quisquam.
-        </p>
+        <p>{userDetails.bio}</p>
         <footer>
           <span>
             <GithubLogo size={18} /> {userDetails.login}

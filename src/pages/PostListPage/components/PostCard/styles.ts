@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import { mixins } from '../../../../styles/mixins'
+import { Link } from 'react-router-dom'
 
-export const PostCardContainer = styled.article`
+export const PostCardContainer = styled(Link)`
+  all: unset;
   padding: 2rem;
   border-radius: 10px;
   border: 2px solid transparent;
+  text-decoration: none;
 
   cursor: pointer;
 

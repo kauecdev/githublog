@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { mixins } from '../../styles/mixins'
+import { Link } from 'react-router-dom'
 
-export const CustomLinkContainer = styled.a`
+export const CustomLinkContainer = styled(Link)`
   ${mixins.fonts.link};
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
 
   display: flex;

@@ -1,10 +1,8 @@
-import { ReactNode } from 'react'
 import { CustomLinkContainer } from './styles'
+import { LinkProps } from 'react-router-dom'
 
-interface LinkProps {
-  children: ReactNode
-}
+interface CustomLinkProps extends LinkProps {}
 
-export function Link({ children }: LinkProps) {
-  return <CustomLinkContainer>{children}</CustomLinkContainer>
+export function Link({ children, ...props }: CustomLinkProps) {
+  return <CustomLinkContainer {...props}>{children}</CustomLinkContainer>
 }

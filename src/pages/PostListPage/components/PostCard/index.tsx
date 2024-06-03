@@ -10,17 +10,23 @@ interface PostCardProps {
   body: string
 }
 
-export function PostCard({ title, createdAt, body }: PostCardProps) {
+export function PostCard({ id, title, createdAt, body }: PostCardProps) {
+  const createdAtLabel = formatDistanceToNow(new Date(createdAt), {
+    addSuffix: true,
+    locale: ptBR,
+  })
+
+  const createdAtLabelFormatted =
+    createdAtLabel.charAt(0).toLocaleUpperCase() +
+    createdAtLabel.slice(1, createdAtLabel.length)
+
+  const postUrl = `/post/${id}`
+
   return (
-    <PostCardContainer>
+    <PostCardContainer to={postUrl}>
       <header>
         <h3>{title}</h3>
-        <span>
-          {formatDistanceToNow(new Date(createdAt), {
-            addSuffix: true,
-            locale: ptBR,
-          })}
-        </span>
+        <span>{createdAtLabelFormatted}</span>
       </header>
       <p>{removeMarkdown(body)}</p>
     </PostCardContainer>
