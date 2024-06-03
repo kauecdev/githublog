@@ -13,15 +13,18 @@
     "@phosphor-icons/react": "^2.1.5",
     "@rocketseat/eslint-config": "^2.2.2",
     "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.23.1",
+    "remove-markdown": "^0.5.0",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/remove-markdown": "^0.3.4",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

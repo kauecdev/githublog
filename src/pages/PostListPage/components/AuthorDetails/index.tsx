@@ -6,14 +6,18 @@ import {
 } from '@phosphor-icons/react'
 import { Link } from '../../../../components/Link'
 import { AuthorDetailsContainer, AuthorDetailsSection } from './styles'
+import { useContext } from 'react'
+import { BlogContext } from '../../../../contexts/BlogContext'
 
 export function AuthorDetails() {
+  const { userDetails } = useContext(BlogContext)
+
   return (
     <AuthorDetailsContainer>
-      <img src="https://github.com/kauecdev.png" alt="" />
+      <img src={userDetails.avatar_url} alt="" />
       <AuthorDetailsSection>
         <header>
-          <span>Kauê Cavalcante</span>
+          <span>{userDetails.name}</span>
           <Link>
             Github <ArrowSquareOut size={12} />
           </Link>
@@ -24,13 +28,13 @@ export function AuthorDetails() {
         </p>
         <footer>
           <span>
-            <GithubLogo size={18} /> kauecdev
+            <GithubLogo size={18} /> {userDetails.login}
           </span>
           <span>
-            <BuildingOffice size={18} weight="fill" /> C1Risk
+            <BuildingOffice size={18} weight="fill" /> {userDetails.company}
           </span>
           <span>
-            <Users size={18} weight="fill" /> 10 seguidores
+            <Users size={18} weight="fill" /> {userDetails.followers} seguidores
           </span>
         </footer>
       </AuthorDetailsSection>

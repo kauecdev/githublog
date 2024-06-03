@@ -1,26 +1,28 @@
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+import removeMarkdown from 'remove-markdown'
 import { PostCardContainer } from './styles'
 
-export function PostCard() {
+interface PostCardProps {
+  id: number
+  title: string
+  createdAt: string
+  body: string
+}
+
+export function PostCard({ title, createdAt, body }: PostCardProps) {
   return (
     <PostCardContainer>
       <header>
-        <h3>Título</h3>
-        <span>Há 1 dia</span>
+        <h3>{title}</h3>
+        <span>
+          {formatDistanceToNow(new Date(createdAt), {
+            addSuffix: true,
+            locale: ptBR,
+          })}
+        </span>
       </header>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-        exercitationem voluptas illum temporibus repudiandae officia
-        dignissimos. Omnis aspernatur iure ullam autem eius placeat nulla
-        eveniet, maxime consequatur repudiandae incidunt maiores. Lorem, ipsum
-        dolor sit amet consectetur adipisicing elit. Magnam exercitationem
-        voluptas illum temporibus repudiandae officia dignissimos. Omnis
-        aspernatur iure ullam autem eius placeat nulla eveniet, maxime
-        consequatur repudiandae incidunt maiores. Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Magnam exercitationem voluptas illum
-        temporibus repudiandae officia dignissimos. Omnis aspernatur iure ullam
-        autem eius placeat nulla eveniet, maxime consequatur repudiandae
-        incidunt maiores.
-      </p>
+      <p>{removeMarkdown(body)}</p>
     </PostCardContainer>
   )
 }

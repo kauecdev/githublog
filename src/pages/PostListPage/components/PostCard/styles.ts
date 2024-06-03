@@ -9,7 +9,6 @@ export const PostCardContainer = styled.article`
   cursor: pointer;
 
   background-color: ${(props) => props.theme['base-post']};
-
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -32,6 +31,7 @@ export const PostCardContainer = styled.article`
     span {
       ${mixins.fonts.textS};
       color: ${(props) => props.theme['base-span']};
+      text-align: right;
     }
   }
 
