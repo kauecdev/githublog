@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# Githublog
+## Desafio 03 - Trilha de React - Rocketseat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto:
 
-Currently, two official plugins are available:
+Uma aplicação para buscar Issues de um repositório no Github e exibi-las como um blog. O foco desse projeto foi entender sobre requisições HTTP e alimentar uma aplicação com dados de uma API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias usadas:
 
-## Expanding the ESLint configuration
+- React
+- Typescript
+- Styled Components
+- Phosphor Icons
+- Context API
+- React Router
+- Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## DIY
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+OBS: Para executar a aplicação na sua máquina você irá precisar ter instalado o node.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Baixe ou clone o projeto.
+2. Instale as dependências usando o comando `npm install` ou `npm i` no diretório do projeto.
+3. Use o comando `npm run dev` para inicar a aplicação.
+4. Divirta-se criado suas próprias tarefas!
+
+## Screenshots
+
+![image](https://github.com/kauecdev/githublog/assets/61801350/471416f5-dfeb-4385-bfdc-6f7a9e36ce77)
+![image](https://github.com/kauecdev/githublog/assets/61801350/398ba5be-91bc-4b82-a4cd-9fae0234618b)
+
+
