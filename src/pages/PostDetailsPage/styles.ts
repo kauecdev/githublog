@@ -37,4 +37,11 @@ export const PostDetailsHeaderContainer = styled.main`
 
 export const PostContentContainer = styled.div`
   padding: 2.5rem 2rem;
+
+  a {
+    all: unset;
+    text-decoration: underline;
+    color: ${(props) => props.theme.blue};
+    cursor: pointer;
+  }
 `

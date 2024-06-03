@@ -14,6 +14,8 @@ import { useContext, useEffect, useState } from 'react'
 import { BlogContext, Issue } from '../../contexts/BlogContext'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export function PostDetailsPage() {
   const { fetchGithubIssueById, userDetails } = useContext(BlogContext)
@@ -76,7 +78,30 @@ export function PostDetailsPage() {
         </PostDetailsHeaderContainer>
       </LayoutHeaderContainer>
       <PostContentContainer>
-        <Markdown>{postDetail.body}</Markdown>
+        <Markdown
+          components={{
+            code({ className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '')
+
+              return match ? (
+                <SyntaxHighlighter
+                  style={dracula}
+                  PreTag="div"
+                  language={match[1]}
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={className || ''} {...props}>
+                  {children}
+                </code>
+              )
+            },
+          }}
+        >
+          {postDetail.body}
+        </Markdown>
       </PostContentContainer>
     </main>
   )
